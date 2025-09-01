@@ -26,7 +26,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-6 p-3 bg-success text-center">
+        <div
+          class="col-6 p-3 bg-success text-center"
+          (mouseenter)="OnMouseEnter()"
+          (mouseleave)="OnMouseLeft()"
+        >
           <h3>One way</h3>
         </div>
         <div class="col-6 p-3 bg-primary text-center">
@@ -96,6 +100,29 @@
               <option value="Jakarta">Jakarta</option>
             </select>
           </div>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-primary" (click)="showLanguageName('Angular')">
+            Angular
+          </button>
+          <button class="btn btn-danger" (click)="showLanguageName('React')">
+            React
+          </button>
+          <button class="btn btn-warning" (click)="showLanguageName('Java')">
+            Java
+          </button>
+        </div>
+      </div>
+      <div class="row pt-3 pb-5">
+        <div class="col-3">
+          <input type="text" value="{{ courseName }}" placeholder=" Name" />
+        </div>
+        <div class="col-3">
+          <input
+            type="text"
+            [(ngModel)]="courseName"
+            placeholder="Course Name"
+          />
         </div>
       </div>
     </div>
